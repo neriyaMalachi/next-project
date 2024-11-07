@@ -5,8 +5,8 @@ import { getUser } from "@/app/services/userAction";
 import Link from "next/link";
 import React from "react";
 
-const postPage = async (postId: string) => {
-  // const { postId } = params;
+const postPage = async (params:string) => {
+  const  postId = params;
   const { id, completed, todo, userId } = await getUser(postId);
   return (
     <div className="flex flex-col justify-evenly items-center h-[80vh] ">
