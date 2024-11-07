@@ -1,5 +1,5 @@
 // components/Navbar.tsx
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -11,10 +11,18 @@ export default function Navbar() {
         </div>
         {/* Navigation Links */}
         <div className="flex space-x-4">
-          <Link href="/about" className="text-gray-300 hover:text-white">About</Link>
-          <Link href="/services" className="text-gray-300 hover:text-white">Services</Link>
-          <Link href="/projects" className="text-gray-300 hover:text-white">Projects</Link>
-          <Link href="/contact" className="text-gray-300 hover:text-white">Contact</Link>
+          <Link href="/about" className="text-gray-300 hover:text-white">
+            About
+          </Link>
+          <Link href="/services" className="text-gray-300 hover:text-white">
+            Services
+          </Link>
+          <Link href="/projects" className="text-gray-300 hover:text-white">
+            Projects
+          </Link>
+          <Link href="/contact" className="text-gray-300 hover:text-white">
+            Contact
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,11 +1,13 @@
 import { postapi } from "@/app/services/userAction";
 import React from "react";
 import CardForApi from "@/app/components/CardForApi";
-import PostApi from "@/app/types/PostApi";
+import PostApiInderface from "@/app/types/PostApi";
 
 const page = async () => {
   const data = await postapi();
-  const posts: PostApi[] = data.data;
+  const posts: PostApiInderface[] = data.data;
+  console.log(posts);
+  
   return (
     <div>
       <h1>API USERS</h1>
