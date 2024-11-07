@@ -28,13 +28,6 @@ export const fetchPosts = async () => {
   return response.json();
 };
 
-
-
-
-
-
-
-
 export const createUser = async (user: { username: string; email: string; password: string }) => {
   const response = await fetch('https://next-project-rc8ys7rs8-neriyamalachis-projects.vercel.app/api/mongoRoute', {
     method: 'POST',
