@@ -4,13 +4,13 @@ import { getUser } from "@/app/services/userAction";
 import Link from "next/link";
 import React from "react";
 
-interface PostViewParams {
+interface PageProps {
   params: {
     postId: string;
   };
 }
 
-const postPage = async ({ params }: PostViewParams) => {
+const postPage = async ({ params }: PageProps) => {
   const { postId } = params;
 
   // משיג את המידע עבור הפוסט הספציפי
