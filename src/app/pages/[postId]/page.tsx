@@ -5,8 +5,8 @@ import PostView from "@/app/types/Post";
 import Link from "next/link";
 import React from "react";
 
-const postPage = async (props: PostView) => {
-  const { postId } =  props.params;
+const postPage = async ({params}: PostView) => {
+  const { postId } = params;
   const { id, completed, todo, userId } = await getUser(postId);
   return (
     <div className="flex flex-col justify-evenly items-center h-[80vh] ">
