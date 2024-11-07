@@ -14,7 +14,7 @@ const postPage = async ({ params }: PageProps) => {
   const { postId } = params;
 
   // משיג את המידע עבור הפוסט הספציפי
-  const { id, completed, todo, userId } = await getUser(postId);
+  const { id, completed, todo, userId } = await getUser(postId || "");
 
   return (
     <div className="flex flex-col justify-evenly items-center h-[80vh]">
