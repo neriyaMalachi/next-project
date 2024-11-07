@@ -1,11 +1,6 @@
-import mongoose, { Document, Model, Schema } from 'mongoose';
-
+import mongoose, { Model, Schema } from 'mongoose';
+import {IUser} from '@/app/types/usersForSchema'
 // הגדרת ממשק למודל
-export interface IUser extends Document {
-    username: string;
-    email: string;
-    password: string;
-}
 
 // הגדרת הסכימה
 const UserSchema: Schema<IUser> = new Schema({
