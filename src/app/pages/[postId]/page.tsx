@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Card_Todo from "@/app/components/Card_Todo";
 import { getUser } from "@/app/services/userAction";
-import PostView from "@/app/types/Post";
+// import PostView from "@/app/types/Post";
 import Link from "next/link";
 import React from "react";
 
-const postPage = async ({params}: PostView) => {
-  const { postId } = params;
+const postPage = async (postId: string) => {
+  // const { postId } = params;
   const { id, completed, todo, userId } = await getUser(postId);
   return (
     <div className="flex flex-col justify-evenly items-center h-[80vh] ">
