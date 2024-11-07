@@ -14,12 +14,6 @@ export const getUser = async (postId: string) => {
 
   return data;
 };
-//post api
-export const postapi = async () => {
-  const response = await fetch(`http://localhost:3000/api/apigroup`);
-  const data = await response.json();
-  return data;
-};
 // services/fetchPosts.ts for React Query
 export const fetchPosts = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -28,10 +22,12 @@ export const fetchPosts = async () => {
 };
 
 
-
-
-
-
+//post api
+export const postapi = async () => {
+  const response = await fetch(`/api/apigroup`);
+  const data = await response.json();
+  return data;
+};
 
 
 export const createUser = async (user: { username: string; email: string; password: string }) => {
