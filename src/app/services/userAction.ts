@@ -16,7 +16,7 @@ export const getUser = async (postId: string) => {
 };
 //post api
 export const postapi = async () => {
-  const response = await fetch(`https://next-project-rc8ys7rs8-neriyamalachis-projects.vercel.app/api/apigroup`);
+  const response = await fetch(`/api/apigroup`);
   const data = await response.json();
   
   return data;
@@ -29,7 +29,7 @@ export const fetchPosts = async () => {
 };
 
 export const createUser = async (user: { username: string; email: string; password: string }) => {
-  const response = await fetch('https://next-project-rc8ys7rs8-neriyamalachis-projects.vercel.app/api/mongoRoute', {
+  const response = await fetch('/api/mongoRoute', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
