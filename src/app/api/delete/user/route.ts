@@ -7,6 +7,6 @@ import { NextResponse } from "next/server";
 //     return NextResponse.json({ message: "Task deleted" });
 //   }
 
-export async function DELET() {
+export async function DELETE() {
   return NextResponse.json({ message: "Task deleted" });
 }
