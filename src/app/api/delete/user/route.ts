@@ -1,5 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function DELETE(params: NextRequest) {
-    return NextResponse.json({ message: "delete user", status: 201 ,data:params});
-   }
+export async function DELETE({ params }: { params: { id: string } }) {
+    const { id } = params;
+    console.log("Deleting task with id:", id);
+  
+    
+    return NextResponse.json({ message: "Task deleted" });
+  }
