@@ -1,18 +1,30 @@
+"use client";
 import { postapi } from "@/app/services/userAction";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardForApi from "@/app/components/CardForApi";
-import PostApiInderface from "@/app/types/PostApi";
+import PostApiInterface from "@/app/types/PostApi"; // Make sure this type is correctly defined
 
-const page = async () => {
-  const data = await postapi();
-  const posts: PostApiInderface[] = data.data;
-  console.log(posts);
-  
+const Page = () => {
+  const [data, setData] = useState<PostApiInterface[]>([]);
+
+  const getData = async () => {
+    try {
+      const response = await postapi();
+      setData(response.data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div>
       <h1>API USERS</h1>
-      {posts.map((user) => (
-        <div className="" key={user.id}>
+      {data?.map((user) => (
+        <div key={user.id}>
           <CardForApi id={user.id} body={user.body} title={user.title} />
         </div>
       ))}
@@ -20,4 +32,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;
