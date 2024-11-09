@@ -1,7 +1,7 @@
 import PostApi from "@/app/types/PostApi";
 import { NextResponse } from "next/server";
 
-export function GET() {
+export async function GET() {
   const posts: PostApi[] = Array.from({ length: 30 }).map((_, index) => {
     return {
       id: index + 1,
@@ -11,6 +11,6 @@ export function GET() {
   });
   return NextResponse.json({ message: "api group get", data: posts });
 }
-export function POST() {
+export async function POST() {
   return NextResponse.json({ message: "api group delete" });
 }
