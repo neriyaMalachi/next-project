@@ -15,6 +15,7 @@ const Page = () => {
       console.error("Failed to fetch data:", error);
     }
   };
+console.log("data");
 
   useEffect(() => {
     getData();
