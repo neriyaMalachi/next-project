@@ -10,7 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("/api/mongoRoute");
+        const response = await axios.get("http://localhost:3000/api/mongoRoute");
         setPosts(response.data.data);
         setLoading(false);
       } catch (err) {
