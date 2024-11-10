@@ -1,5 +1,4 @@
-// pages/layout.tsx
-"use client"; // חשוב להשתמש ב-"use client" כדי שהקומפוננטה תיכנס לקונטקסט של לקוח
+"use client"; 
 
 import { ReactNode, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -9,7 +8,6 @@ interface LayoutProps {
   children: ReactNode; // טייפ של פרופס של הילדים
 }
 
-// הגדרת קומפוננטת Layout
 const Layout = ({ children }: LayoutProps) => {
   const [queryClient] = useState(() => new QueryClient());
 

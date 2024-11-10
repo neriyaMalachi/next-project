@@ -34,10 +34,9 @@ export async function GET() {
   try {
     await connect();
     const data = await User.find();
-    console.log("rrr", data);
-
     return NextResponse.json({ message: "successfull", data });
   } catch (error) {
-    return NextResponse.json("Error in fetching posts" + error);
+    const errorMessage = (error as Error).message;
+    return NextResponse.json("Error in fetching posts: " + errorMessage)
   }
 }
